@@ -1,0 +1,71 @@
+//Swift Playground
+//Bahasa Swift
+
+import UIKit
+import Foundation
+var str = "Hello, playground"
+
+func test1(arrayAngka : [Int]) -> [Any]{
+    var arrayAngka2 = [Any]()
+    for angka in arrayAngka{
+
+        if angka % 15 == 0 {
+            arrayAngka2.append("fish bash")
+        }else if angka % 3 == 0{
+            arrayAngka2.append("fish")
+        }else if angka % 5 == 0{
+            arrayAngka2.append("bash")
+        }else{
+            arrayAngka2.append(angka)
+        }
+    }
+    return arrayAngka2
+}
+let arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+print("Nomer 1")
+print(test1(arrayAngka: arr))
+
+var arr2 = [5,6,4,3,2,1,7,8,10,9]
+func test2(input: inout [Int]){
+    var isSwaped1 = true
+    var isSwaped2 = true
+    var input2 = input
+    while isSwaped1 == true{
+        isSwaped1 = false
+        for index in 1..<input.count {
+            if input[index] < input[index - 1] {
+                input.swapAt(index - 1, index)
+                isSwaped1 = true
+            }
+        }
+    }
+    while isSwaped2 == true{
+        isSwaped2 = false
+        for index in 1..<input2.count {
+            if input2[index] > input2[index - 1] {
+                input2.swapAt(index - 1, index)
+                isSwaped2 = true
+            }
+        }
+    }
+    print(input)
+    print(input2)
+}
+print("\nNomer 2")
+test2(input: &arr2)
+
+func test3(input: String) -> Bool{
+    
+    var input2 = ""
+    for character in input {
+        input2 = "\(character)" + input2
+    }
+    
+    if input == input2 {
+        return true
+    }else {
+        return false
+    }
+}
+print("\nNomer 3")
+print(test3(input: "fakhry"))
